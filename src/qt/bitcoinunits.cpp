@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,9 +20,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(DIN);
-    unitlist.append(mDIN);
-    unitlist.append(uDIN);
+    unitlist.append(FCK);
+    unitlist.append(mFCK);
+    unitlist.append(uFCK);
     unitlist.append(dinnies);
     return unitlist;
 }
@@ -31,9 +31,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case DIN:
-    case mDIN:
-    case uDIN:
+    case FCK:
+    case mFCK:
+    case uFCK:
     case dinnies:
         return true;
     default:
@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case DIN: return QString("DIN");
-            case mDIN: return QString("mDIN");
-            case uDIN: return QString::fromUtf8("μDIN");
+            case FCK: return QString("FCK");
+            case mFCK: return QString("mFCK");
+            case uFCK: return QString::fromUtf8("μFCK");
             case dinnies: return QString("dinnies");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case DIN: return QString("tDIN");
-            case mDIN: return QString("mtDIN");
-            case uDIN: return QString::fromUtf8("μtDIN");
+            case FCK: return QString("tFCK");
+            case mFCK: return QString("mtFCK");
+            case uFCK: return QString::fromUtf8("μtFCK");
             case dinnies: return QString("tdinnies");
             default: return QString("???");
         }
@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case DIN: return QString("Dinero");
-            case mDIN: return QString("Milli-Dinero (1 / 1" THIN_SP_UTF8 "000)");
-            case uDIN: return QString("Micro-Dinero (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case dinnies: return QString("Ten Nano-Dinero (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case FCK: return QString("Fucking");
+            case mFCK: return QString("Milli-Fucking (1 / 1" THIN_SP_UTF8 "000)");
+            case uFCK: return QString("Micro-Fucking (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case dinnies: return QString("Ten Nano-Fucking (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,9 +84,9 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case DIN: return QString("TestDins");
-            case mDIN: return QString("Milli-TestDin (1 / 1" THIN_SP_UTF8 "000)");
-            case uDIN: return QString("Micro-TestDin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case FCK: return QString("TestDins");
+            case mFCK: return QString("Milli-TestDin (1 / 1" THIN_SP_UTF8 "000)");
+            case uFCK: return QString("Micro-TestDin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case dinnies: return QString("Ten Nano-TestDin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -97,9 +97,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case DIN:  return 100000000;
-    case mDIN: return 100000;
-    case uDIN: return 100;
+    case FCK:  return 100000000;
+    case mFCK: return 100000;
+    case uFCK: return 100;
     case dinnies: return 1;
     default:   return 100000000;
     }
@@ -109,9 +109,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case DIN: return 8;
-    case mDIN: return 5;
-    case uDIN: return 2;
+    case FCK: return 8;
+    case mFCK: return 5;
+    case uFCK: return 2;
     case dinnies: return 0;
     default: return 0;
     }

@@ -13,7 +13,7 @@
 #include "serialize.h"
 #include "util.h"
 
-#include "test/test_dinero.h"
+#include "test/test_fucking.h"
 
 #include <stdint.h>
 

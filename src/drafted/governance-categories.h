@@ -4,22 +4,22 @@
 
 	* means the category has an associated class
 	
-	CDineroNetwork: DINERO NETWORK (ROOT)
+	CFuckingNetwork: FCKERO NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CDineroProject> vecProjects;
+		vector<CFuckingProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CDineroProject:
+	CFuckingProject:
 	has:
 		name
 		employees
 
 */
 
-	// DINERO NETWORK (ROOT)
+	// FCKERO NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES
@@ -38,7 +38,7 @@
 	// 			-> PROJECT MILESTONE*
 	// 				-> START, ONGOING, COMPLETE, FAILURE
 	// 			-> PROPOSAL*
-	// 				-> FUNDING, GOVERNANCE, AMEND, GENERIC
+	// 				-> FUNFCKG, GOVERNANCE, AMEND, GENERIC
 	// 			-> CONTRACT*
 	// 				-> TYPE
 	// 					-> INTERNAL, EXTERNAL
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=DINERODRIVE)
+	// 			-> VALUEOVERRIDE (STORE=FCKERODRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

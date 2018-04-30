@@ -5,7 +5,7 @@
 #include "chain.h"
 #include "random.h"
 #include "versionbits.h"
-#include "test/test_dinero.h"
+#include "test/test_fucking.h"
 #include "chainparams.h"
 #include "validation.h"
 #include "consensus/params.h"
@@ -173,7 +173,7 @@ BOOST_AUTO_TEST_CASE(versionbits_test)
                            .Mine(14333, TestTime(30003), 0).TestFailed()
                            .Mine(24000, TestTime(40000), 0).TestFailed()
 
-        // DEFINED -> STARTED -> LOCKEDIN at the last minute -> ACTIVE
+        // DEFINED -> STARTED -> LOCKEFCK at the last minute -> ACTIVE
                            .Reset().TestDefined()
                            .Mine(1, TestTime(1), 0).TestDefined()
                            .Mine(1000, TestTime(10000) - 1, 0x101).TestDefined() // One second more and it would be defined

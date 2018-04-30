@@ -16,9 +16,9 @@ enum GovernanceObjectType {
     ValueOverride = 1, 
 
     // -------------------------------
-    // DineroNetwork - is the root node
-    DineroNetwork = 1000,
-    DineroNetworkVariable = 1001,
+    // FuckingNetwork - is the root node
+    FuckingNetwork = 1000,
+    FuckingNetworkVariable = 1001,
     Category = 1002,
 
     // Actors

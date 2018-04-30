@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/dinerocoin/dinero/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/fuckingcoin/fucking/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,14 +10,14 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/dinerocoin/gitian.sigs.git
-	git clone https://github.com/dinerocoin/dinero-detached-sigs.git
+	git clone https://github.com/fuckingcoin/gitian.sigs.git
+	git clone https://github.com/fuckingcoin/fucking-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/dinerocoin/dinero.git
+	git clone https://github.com/fuckingcoin/fucking.git
 
-### Dinero Core maintainers/release engineers, update (commit) version in sources
+### Fucking Core maintainers/release engineers, update (commit) version in sources
 
-	pushd ./dinero
+	pushd ./fucking
 	contrib/verifysfbinaries/verify.sh
 	configure.ac
 	doc/README*
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./dinero
+	pushd ./fucking
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
@@ -76,52 +76,52 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../dinero/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../fucking/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 ```
-./bin/gbuild --url dinero=/path/to/dinero,signature=/path/to/sigs {rest of arguments}
+./bin/gbuild --url fucking=/path/to/fucking,signature=/path/to/sigs {rest of arguments}
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Dinero Core for Linux, Windows, and OS X:
+### Build and sign Fucking Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit dinero=v${VERSION} ../dinero/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../dinero/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/dinero-*.tar.gz build/out/src/dinero-*.tar.gz ../
+	./bin/gbuild --commit fucking=v${VERSION} ../fucking/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../fucking/contrib/gitian-descriptors/gitian-linux.yml
+	mv build/out/fucking-*.tar.gz build/out/src/fucking-*.tar.gz ../
 
-	./bin/gbuild --commit dinero=v${VERSION} ../dinero/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../dinero/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/dinero-*-win-unsigned.tar.gz inputs/dinero-win-unsigned.tar.gz
-	mv build/out/dinero-*.zip build/out/dinero-*.exe ../
+	./bin/gbuild --commit fucking=v${VERSION} ../fucking/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../fucking/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/fucking-*-win-unsigned.tar.gz inputs/fucking-win-unsigned.tar.gz
+	mv build/out/fucking-*.zip build/out/fucking-*.exe ../
 
-	./bin/gbuild --commit dinero=v${VERSION} ../dinero/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../dinero/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/dinero-*-osx-unsigned.tar.gz inputs/dinero-osx-unsigned.tar.gz
-	mv build/out/dinero-*.tar.gz build/out/dinero-*.dmg ../
+	./bin/gbuild --commit fucking=v${VERSION} ../fucking/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../fucking/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/fucking-*-osx-unsigned.tar.gz inputs/fucking-osx-unsigned.tar.gz
+	mv build/out/fucking-*.tar.gz build/out/fucking-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. source tarball (dinero-${VERSION}.tar.gz)
-  2. linux 32-bit and 64-bit dist tarballs (dinero-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (dinero-${VERSION}-win[32|64]-setup-unsigned.exe, dinero-${VERSION}-win[32|64].zip)
-  4. OS X unsigned installer and dist tarball (dinero-${VERSION}-osx-unsigned.dmg, dinero-${VERSION}-osx64.tar.gz)
+  1. source tarball (fucking-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit dist tarballs (fucking-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (fucking-${VERSION}-win[32|64]-setup-unsigned.exe, fucking-${VERSION}-win[32|64].zip)
+  4. OS X unsigned installer and dist tarball (fucking-${VERSION}-osx-unsigned.dmg, fucking-${VERSION}-osx64.tar.gz)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
   Add other gitian builders keys to your gpg keyring
 
-	gpg --import ../dinero/contrib/gitian-downloader/*.pgp
+	gpg --import ../fucking/contrib/gitian-downloader/*.pgp
 
   Verify the signatures
 
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../dinero/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../dinero/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../dinero/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../fucking/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../fucking/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../fucking/contrib/gitian-descriptors/gitian-osx.yml
 
 	popd
 
@@ -139,25 +139,25 @@ Commit your signature to gitian.sigs:
 
   Wait for Windows/OS X detached signatures:
 	Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-	Detached signatures will then be committed to the [dinero-detached-sigs](https://github.com/dinerocoin/dinero-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+	Detached signatures will then be committed to the [fucking-detached-sigs](https://github.com/fuckingcoin/fucking-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
   Create (and optionally verify) the signed OS X binary:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../dinero/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../dinero/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../dinero/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/dinero-osx-signed.dmg ../dinero-${VERSION}-osx.dmg
+	./bin/gbuild -i --commit signature=v${VERSION} ../fucking/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../fucking/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../fucking/contrib/gitian-descriptors/gitian-osx-signer.yml
+	mv build/out/fucking-osx-signed.dmg ../fucking-${VERSION}-osx.dmg
 	popd
 
   Create (and optionally verify) the signed Windows binaries:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../dinero/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../dinero/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../dinero/contrib/gitian-descriptors/gitian-win-signer.yml
-	mv build/out/dinero-*win64-setup.exe ../dinero-${VERSION}-win64-setup.exe
-	mv build/out/dinero-*win32-setup.exe ../dinero-${VERSION}-win32-setup.exe
+	./bin/gbuild -i --commit signature=v${VERSION} ../fucking/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../fucking/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../fucking/contrib/gitian-descriptors/gitian-win-signer.yml
+	mv build/out/fucking-*win64-setup.exe ../fucking-${VERSION}-win64-setup.exe
+	mv build/out/fucking-*win32-setup.exe ../fucking-${VERSION}-win32-setup.exe
 	popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -182,20 +182,20 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the dinerocoin.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the fuckingcoin.org server
 
-- Update dinerocoin.org
+- Update fuckingcoin.org
 
 - Announce the release:
 
-  - Release on Dinero forum: https://www.dinerocoin.org/forum/topic/official-announcements.54/
+  - Release on Fucking forum: https://www.fuckingcoin.org/forum/topic/official-announcements.54/
 
-  - Dinero-development mailing list
+  - Fucking-development mailing list
 
-  - Update title of #dinerocoin on Freenode IRC
+  - Update title of #fuckingcoin on Freenode IRC
 
 
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~dinerocoin.org/+archive/ubuntu/dinero)
+- Notify flare so that he can start building [the PPAs](https://launchpad.net/~fuckingcoin.org/+archive/ubuntu/fucking)
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

@@ -1,30 +1,30 @@
-Dinero Core 1.0.X.X
+Fucking Core 1.0.X.X
 =====================
 
-This is the official reference wallet for Dinero digital currency and comprises the backbone of the Dinero peer-to-peer network. You can [download Dinero Core](https://www.dinerocoin.org/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Fucking digital currency and comprises the backbone of the Fucking peer-to-peer network. You can [download Fucking Core](https://www.fuckingcoin.org/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Dinero on your native platform.
+The following are some helpful notes on how to run Fucking on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/dinero-qt` (GUI) or
-- `bin/dinerod` (headless)
+- `bin/fucking-qt` (GUI) or
+- `bin/fuckingd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run dinero-qt.exe.
+Unpack the files into a directory, and then run fucking-qt.exe.
 
 ### OS X
 
-Drag Dinero-Qt to your applications folder, and then run Dinero-Qt.
+Drag Fucking-Qt to your applications folder, and then run Fucking-Qt.
 
 Building
 ---------------------
-The following are developer notes on how to build Dinero Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Fucking Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -34,7 +34,7 @@ The following are developer notes on how to build Dinero Core on your native pla
 
 Development
 ---------------------
-The Dinero Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Fucking Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

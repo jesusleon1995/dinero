@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: dinerod.service
-Upstart: dinerod.conf
-OpenRC:  dinerod.openrc
-         dinerod.openrcconf
-CentOS:  dinerod.init
-OS X:    org.dinero.dinerod.plist
+SystemD: fuckingd.service
+Upstart: fuckingd.conf
+OpenRC:  fuckingd.openrc
+         fuckingd.openrcconf
+CentOS:  fuckingd.init
+OS X:    org.fucking.fuckingd.plist
 
 have been made available to assist packagers in creating node packages here.
 

@@ -1,0 +1,22 @@
+[Unit]
+Description=Fucking's distributed currency daemon
+After=network.target
+
+[Service]
+User=fuckingcore
+Group=fuckingcore
+
+Type=forking
+PIDFile=/var/lib/fuckingd/fuckingd.pid
+ExecStart=/usr/bin/fuckingd -daemon -pid=/var/lib/fuckingd/fuckingd.pid \
+-conf=/etc/fuckingcore/fucking.conf -datadir=/var/lib/fuckingd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

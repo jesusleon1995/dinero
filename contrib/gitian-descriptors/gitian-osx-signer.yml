@@ -1,5 +1,5 @@
 ---
-name: "dinero-dmg-signer"
+name: "fucking-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,10 +8,10 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/dinerocoin/dinero-detached-sigs.git"
+- "url": "https://github.com/fuckingcoin/fucking-detached-sigs.git"
   "dir": "signature"
 files:
-- "dinero-osx-unsigned.tar.gz"
+- "fucking-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -28,10 +28,10 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=dinero-osx-unsigned.tar.gz
-  SIGNED=dinero-osx-signed.dmg
+  UNSIGNED=fucking-osx-unsigned.tar.gz
+  SIGNED=fucking-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Dinero-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Fucking-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}

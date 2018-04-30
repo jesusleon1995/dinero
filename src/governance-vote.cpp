@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,8 +36,8 @@ std::string CGovernanceVoting::ConvertSignalToString(vote_signal_enum_t nSignal)
         case VOTE_SIGNAL_NONE:
             strReturn = "NONE";
             break;
-        case VOTE_SIGNAL_FUNDING:
-            strReturn = "FUNDING";
+        case VOTE_SIGNAL_FUNFCKG:
+            strReturn = "FUNFCKG";
             break;
         case VOTE_SIGNAL_VALID:
             strReturn = "VALID";
@@ -166,7 +166,7 @@ vote_signal_enum_t CGovernanceVoting::ConvertVoteSignal(std::string strVoteSigna
 {
     vote_signal_enum_t eSignal = VOTE_SIGNAL_NONE;
     if(strVoteSignal == "funding") {
-        eSignal = VOTE_SIGNAL_FUNDING;
+        eSignal = VOTE_SIGNAL_FUNFCKG;
     }
     else if(strVoteSignal == "valid") {
         eSignal = VOTE_SIGNAL_VALID;

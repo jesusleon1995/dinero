@@ -1,9 +1,9 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//#define ENABLE_DINERO_DEBUG
+//#define ENABLE_FCKERO_DEBUG
 
 #include "activemasternode.h"
 #include "governance.h"
@@ -57,7 +57,7 @@ UniValue gobject(const UniValue& params, bool fHelp)
                 "  list               - List governance objects (can be filtered by signal and/or object type)\n"
                 "  diff               - List differences since last diff\n"
                 "  vote-alias         - Vote on a governance object by masternode alias (using masternode.conf setup)\n"
-                "  vote-conf          - Vote on a governance object by masternode configured in dinero.conf\n"
+                "  vote-conf          - Vote on a governance object by masternode configured in fucking.conf\n"
                 "  vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)\n"
                 );
 
@@ -339,7 +339,7 @@ UniValue gobject(const UniValue& params, bool fHelp)
             nFailed++;
             statusObj.push_back(Pair("result", "failed"));
             statusObj.push_back(Pair("errorMessage", "Can't find masternode by collateral output"));
-            resultsObj.push_back(Pair("dinero.conf", statusObj));
+            resultsObj.push_back(Pair("fucking.conf", statusObj));
             returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
             returnObj.push_back(Pair("detail", resultsObj));
             return returnObj;
@@ -350,7 +350,7 @@ UniValue gobject(const UniValue& params, bool fHelp)
             nFailed++;
             statusObj.push_back(Pair("result", "failed"));
             statusObj.push_back(Pair("errorMessage", "Failure to sign."));
-            resultsObj.push_back(Pair("dinero.conf", statusObj));
+            resultsObj.push_back(Pair("fucking.conf", statusObj));
             returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
             returnObj.push_back(Pair("detail", resultsObj));
             return returnObj;
@@ -367,7 +367,7 @@ UniValue gobject(const UniValue& params, bool fHelp)
             statusObj.push_back(Pair("errorMessage", exception.GetMessage()));
         }
 
-        resultsObj.push_back(Pair("dinero.conf", statusObj));
+        resultsObj.push_back(Pair("fucking.conf", statusObj));
 
         returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
         returnObj.push_back(Pair("detail", resultsObj));
@@ -665,11 +665,11 @@ UniValue gobject(const UniValue& params, bool fHelp)
                 bObj.push_back(Pair("SigningMasternode", masternodeVin.prevout.ToStringShort()));
             }
 
-            // REPORT STATUS FOR FUNDING VOTES SPECIFICALLY
-            bObj.push_back(Pair("AbsoluteYesCount",  pGovObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNDING)));
-            bObj.push_back(Pair("YesCount",  pGovObj->GetYesCount(VOTE_SIGNAL_FUNDING)));
-            bObj.push_back(Pair("NoCount",  pGovObj->GetNoCount(VOTE_SIGNAL_FUNDING)));
-            bObj.push_back(Pair("AbstainCount",  pGovObj->GetAbstainCount(VOTE_SIGNAL_FUNDING)));
+            // REPORT STATUS FOR FUNFCKG VOTES SPECIFICALLY
+            bObj.push_back(Pair("AbsoluteYesCount",  pGovObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNFCKG)));
+            bObj.push_back(Pair("YesCount",  pGovObj->GetYesCount(VOTE_SIGNAL_FUNFCKG)));
+            bObj.push_back(Pair("NoCount",  pGovObj->GetNoCount(VOTE_SIGNAL_FUNFCKG)));
+            bObj.push_back(Pair("AbstainCount",  pGovObj->GetAbstainCount(VOTE_SIGNAL_FUNFCKG)));
 
             // REPORT VALIDITY AND CACHING FLAGS FOR VARIOUS SETTINGS
             std::string strError = "";
@@ -718,13 +718,13 @@ UniValue gobject(const UniValue& params, bool fHelp)
         }
 
         // SHOW (MUCH MORE) INFORMATION ABOUT VOTES FOR GOVERNANCE OBJECT (THAN LIST/DIFF ABOVE)
-        // -- FUNDING VOTING RESULTS
+        // -- FUNFCKG VOTING RESULTS
 
         UniValue objFundingResult(UniValue::VOBJ);
-        objFundingResult.push_back(Pair("AbsoluteYesCount",  pGovObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNDING)));
-        objFundingResult.push_back(Pair("YesCount",  pGovObj->GetYesCount(VOTE_SIGNAL_FUNDING)));
-        objFundingResult.push_back(Pair("NoCount",  pGovObj->GetNoCount(VOTE_SIGNAL_FUNDING)));
-        objFundingResult.push_back(Pair("AbstainCount",  pGovObj->GetAbstainCount(VOTE_SIGNAL_FUNDING)));
+        objFundingResult.push_back(Pair("AbsoluteYesCount",  pGovObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNFCKG)));
+        objFundingResult.push_back(Pair("YesCount",  pGovObj->GetYesCount(VOTE_SIGNAL_FUNFCKG)));
+        objFundingResult.push_back(Pair("NoCount",  pGovObj->GetNoCount(VOTE_SIGNAL_FUNFCKG)));
+        objFundingResult.push_back(Pair("AbstainCount",  pGovObj->GetAbstainCount(VOTE_SIGNAL_FUNFCKG)));
         objResult.push_back(Pair("FundingResult", objFundingResult));
 
         // -- VALIDITY VOTING RESULTS

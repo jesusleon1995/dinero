@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/dinero-config.h"
+#include "config/fucking-config.h"
 #endif
 
 #include "compat.h"
@@ -35,14 +35,14 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_DINERO_DEBUG
-#ifdef ENABLE_DINERO_DEBUG
+//#define ENABLE_FCKERO_DEBUG
+#ifdef ENABLE_FCKERO_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 
 #endif
 
-//Dinero only features
+//Fucking only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -249,7 +249,7 @@ std::string GetThreadName();
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("dinero-%s", name);
+    std::string s = strprintf("fucking-%s", name);
     RenameThread(s.c_str());
     try
     {

@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -16,7 +16,7 @@ using namespace std;
 class CGovernanceVote;
 class CConnman;
 
-// INTENTION OF MASTERNODES REGARDING ITEM
+// INTENTION OF MASTERNODES REGARFCKG ITEM
 enum vote_outcome_enum_t  {
     VOTE_OUTCOME_NONE      = 0,
     VOTE_OUTCOME_YES       = 1,
@@ -28,7 +28,7 @@ enum vote_outcome_enum_t  {
 // SIGNAL VARIOUS THINGS TO HAPPEN:
 enum vote_signal_enum_t  {
     VOTE_SIGNAL_NONE       = 0,
-    VOTE_SIGNAL_FUNDING    = 1, //   -- fund this object for it's stated amount
+    VOTE_SIGNAL_FUNFCKG    = 1, //   -- fund this object for it's stated amount
     VOTE_SIGNAL_VALID      = 2, //   -- this object checks out in sentinel engine
     VOTE_SIGNAL_DELETE     = 3, //   -- this object should be deleted from memory entirely
     VOTE_SIGNAL_ENDORSED   = 4, //   -- officially endorsed by the network somehow (delegation)

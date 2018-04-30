@@ -1,9 +1,9 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//#define ENABLE_DINERO_DEBUG
+//#define ENABLE_FCKERO_DEBUG
 
 #include "core_io.h"
 #include "governance-classes.h"
@@ -325,7 +325,7 @@ bool CSuperblockManager::IsSuperblockTriggered(int nBlockHeight)
             continue;
         }
 
-        // MAKE SURE THIS TRIGGER IS ACTIVE VIA FUNDING CACHE FLAG
+        // MAKE SURE THIS TRIGGER IS ACTIVE VIA FUNFCKG CACHE FLAG
 
         pObj->UpdateSentinelVariables();
 
@@ -374,7 +374,7 @@ bool CSuperblockManager::GetBestSuperblock(CSuperblock_sptr& pSuperblockRet, int
 
         // DO WE HAVE A NEW WINNER?
 
-        int nTempYesCount = pObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNDING);
+        int nTempYesCount = pObj->GetAbsoluteYesCount(VOTE_SIGNAL_FUNFCKG);
         DBG( cout << "GetBestSuperblock nTempYesCount = " << nTempYesCount << endl; );
         if(nTempYesCount > nYesCount) {
             nYesCount = nTempYesCount;
@@ -436,7 +436,7 @@ void CSuperblockManager::CreateSuperblock(CMutableTransaction& txNewRet, int nBl
             ExtractDestination(payment.script, address1);
             CBitcoinAddress address2(address1);
 
-            // TODO: PRINT NICE N.N DIN OUTPUT
+            // TODO: PRINT NICE N.N FCK OUTPUT
 
             DBG( cout << "CSuperblockManager::CreateSuperblock Before LogPrintf call, nAmount = " << payment.nAmount << endl; );
             LogPrintf("NEW Superblock : output %d (addr %s, amount %d)\n", i, address2.ToString(), payment.nAmount);
@@ -580,7 +580,7 @@ void CSuperblock::ParsePaymentSchedule(std::string& strPaymentAddresses, std::st
         CBitcoinAddress address(vecParsed1[i]);
         if (!address.IsValid()) {
             std::ostringstream ostr;
-            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid Dinero Address : " <<  vecParsed1[i];
+            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid Fucking Address : " <<  vecParsed1[i];
             LogPrintf("%s\n", ostr.str());
             throw std::runtime_error(ostr.str());
         }

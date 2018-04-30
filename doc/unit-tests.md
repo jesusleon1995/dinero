@@ -6,13 +6,13 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the dinerod tests manually, launch `src/test/test_dinero`.
+To run the fuckingd tests manually, launch `src/test/test_fucking`.
 
-To add more dinerod tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more fuckingd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the dinero-qt tests manually, launch `src/qt/test/test_dinero-qt`
+To run the fucking-qt tests manually, launch `src/qt/test/test_fucking-qt`
 
-To add more dinero-qt tests, add them to the `src/qt/test/` directory and
+To add more fucking-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.

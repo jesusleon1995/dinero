@@ -1,0 +1,6 @@
+usr/local/bin/fucking-qt usr/bin
+share/pixmaps/fucking32.xpm usr/share/pixmaps
+share/pixmaps/fucking16.xpm usr/share/pixmaps
+share/pixmaps/fucking128.png usr/share/pixmaps
+debian/fucking-qt.desktop usr/share/applications
+debian/fucking-qt.protocol usr/share/kde4/services/

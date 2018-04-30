@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -244,11 +244,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Dinero Core server.");
+            "\nStop Fucking Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Dinero Core server stopping";
+    return "Fucking Core server stopping";
 }
 
 /**
@@ -344,20 +344,20 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "resendwallettransactions", &resendwallettransactions, true},
 #endif
 
-    /* Dinero features */
-    { "dinero",               "masternode",             &masternode,             true  },
-    { "dinero",               "masternodelist",         &masternodelist,         true  },
-    { "dinero",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "dinero",               "gobject",                &gobject,                true  },
-    { "dinero",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "dinero",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "dinero",               "voteraw",                &voteraw,                true  },
-    { "dinero",               "mnsync",                 &mnsync,                 true  },
-    { "dinero",               "spork",                  &spork,                  true  },
-    { "dinero",               "getpoolinfo",            &getpoolinfo,            true  },
-    { "dinero",               "sentinelping",           &sentinelping,           true  },
+    /* Fucking features */
+    { "fucking",               "masternode",             &masternode,             true  },
+    { "fucking",               "masternodelist",         &masternodelist,         true  },
+    { "fucking",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "fucking",               "gobject",                &gobject,                true  },
+    { "fucking",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "fucking",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "fucking",               "voteraw",                &voteraw,                true  },
+    { "fucking",               "mnsync",                 &mnsync,                 true  },
+    { "fucking",               "spork",                  &spork,                  true  },
+    { "fucking",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "fucking",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
-    { "dinero",               "privatesend",            &privatesend,            false },
+    { "fucking",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -581,7 +581,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> dinero-cli " + methodname + " " + args + "\n";
+    return "> fucking-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Fucking
+Comment=Fucking P2P Cryptocurrency
+Comment[fr]=Fucking, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Fucking, eşten eşe kriptografik sanal para birimi
+Exec=fucking-qt %u
+Terminal=false
+Type=Application
+Icon=fucking128
+MimeType=x-scheme-handler/fucking;
+Categories=Office;Finance;

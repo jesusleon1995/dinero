@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package dinerod/dinero-qt
-for Debian-based Linux systems. If you compile dinerod/dinero-qt yourself, there are some useful files here.
+This directory contains files used to package fuckingd/fucking-qt
+for Debian-based Linux systems. If you compile fuckingd/fucking-qt yourself, there are some useful files here.
 
-## dinero: URI support ##
+## fucking: URI support ##
 
 
-dinero-qt.desktop  (Gnome / Open Desktop)
+fucking-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install dinero-qt.desktop
+	sudo desktop-file-install fucking-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your dinero-qt binary to `/usr/bin`
-and the `../../share/pixmaps/dinero128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your fucking-qt binary to `/usr/bin`
+and the `../../share/pixmaps/fucking128.png` to `/usr/share/pixmaps`
 
-dinero-qt.protocol (KDE)
+fucking-qt.protocol (KDE)
 

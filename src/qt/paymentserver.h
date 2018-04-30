@@ -6,7 +6,7 @@
 #define BITCOIN_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// dinero: URIs
+// fucking: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during

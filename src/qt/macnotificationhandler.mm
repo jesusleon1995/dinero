@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.dinero.Dinero-Qt";
+        return @"org.fucking.Fucking-Qt";
     } else {
         return [self __bundleIdentifier];
     }

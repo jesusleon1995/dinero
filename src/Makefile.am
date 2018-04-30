@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libdineroconsensus.la
-LIBBITCOIN_CONSENSUS=libdineroconsensus.la
+lib_LTLIBRARIES = libfuckingconsensus.la
+LIBBITCOIN_CONSENSUS=libfuckingconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
@@ -60,15 +60,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += dinerod
+  bin_PROGRAMS += fuckingd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += dinero-cli dinero-tx
+  bin_PROGRAMS += fucking-cli fucking-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# dinero core #
+# fucking core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
@@ -207,7 +207,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between dinerod and dinero-qt
+# server: shared between fuckingd and fucking-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -280,7 +280,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between dinerod and dinero-qt, but only linked
+# wallet: shared between fuckingd and fucking-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -345,7 +345,7 @@ crypto_libbitcoin_crypto_a_SOURCES += \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between dinerod, and dinero-qt and non-server tools
+# common: shared between fuckingd, and fucking-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -405,7 +405,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between dinero-cli and dinero-qt
+# cli: shared between fucking-cli and fucking-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -416,16 +416,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-dinerod_SOURCES = dinerod.cpp
-dinerod_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dinerod_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dinerod_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+fuckingd_SOURCES = fuckingd.cpp
+fuckingd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+fuckingd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+fuckingd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dinerod_SOURCES += dinerod-res.rc
+fuckingd_SOURCES += fuckingd-res.rc
 endif
 
-dinerod_LDADD = \
+fuckingd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -436,56 +436,56 @@ dinerod_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-dinerod_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+fuckingd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-dinerod_LDADD += libbitcoin_wallet.a
+fuckingd_LDADD += libbitcoin_wallet.a
 endif
 
-dinerod_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+fuckingd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# dinero-cli binary #
-dinero_cli_SOURCES = dinero-cli.cpp
-dinero_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-dinero_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dinero_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# fucking-cli binary #
+fucking_cli_SOURCES = fucking-cli.cpp
+fucking_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+fucking_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+fucking_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dinero_cli_SOURCES += dinero-cli-res.rc
+fucking_cli_SOURCES += fucking-cli-res.rc
 endif
 
-dinero_cli_LDADD = \
+fucking_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-dinero_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+fucking_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# dinero-tx binary #
-dinero_tx_SOURCES = dinero-tx.cpp
-dinero_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dinero_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dinero_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# fucking-tx binary #
+fucking_tx_SOURCES = fucking-tx.cpp
+fucking_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+fucking_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+fucking_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dinero_tx_SOURCES += dinero-tx-res.rc
+fucking_tx_SOURCES += fucking-tx-res.rc
 endif
 
-dinero_tx_LDADD = \
+fucking_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-dinero_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+fucking_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# dineroconsensus library #
+# fuckingconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/dineroconsensus.h
-libdineroconsensus_la_SOURCES = \
+include_HEADERS = script/fuckingconsensus.h
+libfuckingconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/ripemd160.cpp \
   crypto/sha1.cpp \
@@ -494,20 +494,20 @@ libdineroconsensus_la_SOURCES = \
   hash.cpp \
   primitives/transaction.cpp \
   pubkey.cpp \
-  script/dineroconsensus.cpp \
+  script/fuckingconsensus.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
 
 if GLIBC_BACK_COMPAT
-  libdineroconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libfuckingconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libdineroconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libdineroconsensus_la_LIBADD = $(LIBSECP256K1)
-libdineroconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libdineroconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libfuckingconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libfuckingconsensus_la_LIBADD = $(LIBSECP256K1)
+libfuckingconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libfuckingconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -126,7 +126,7 @@ struct masternode_info_t
 };
 
 //
-// The Masternode Class. For managing the Dinero process. It contains the input of the 5000DIN, signature to prove
+// The Masternode Class. For managing the Fucking process. It contains the input of the 5000FCK, signature to prove
 // it's the one who own that ip address and code for calculating the payment election.
 //
 class CMasternode : public masternode_info_t
@@ -252,7 +252,7 @@ public:
         return false;
     }
 
-    /// Is the input associated with collateral public key? (and there is 5000 DIN - checking if valid masternode)
+    /// Is the input associated with collateral public key? (and there is 5000 FCK - checking if valid masternode)
     bool IsInputAssociatedWithPubkey();
 
     bool IsValidNetAddr();

@@ -1,11 +1,11 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 
 #include "governance-validators.h"
 #include "univalue.h"
 #include "utilstrencodings.h"
 
-#include "test/test_dinero.h"
+#include "test/test_fucking.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Dinero-Qt</string>
+  <string>Fucking-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Dinero-Qt</string>
+  <string>Fucking-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.dinero.Dinero-Qt</string>
+  <string>org.fucking.Fucking-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.dinero.DineroPayment</string>
+      <string>org.fucking.FuckingPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>dinero</string>
+        <string>fucking</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.dinero.paymentrequest</string>
+      <string>org.fucking.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Dinero payment request</string>
+      <string>Fucking payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-dinero-payment-request</string>
+        <string>application/x-fucking-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>dinerocoinmentrequest</string>
+          <string>fuckingcoinmentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.dinero.paymentrequest</string>
+        <string>org.fucking.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

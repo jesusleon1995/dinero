@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * Dinero RPC command dispatcher.
+ * Fucking RPC command dispatcher.
  */
 class CRPCTable
 {

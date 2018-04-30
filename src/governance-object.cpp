@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -455,7 +455,7 @@ bool CGovernanceObject::IsValidLocally(std::string& strError, bool& fMissingMast
                 } else if (err == CMasternode::COLLATERAL_UTXO_NOT_FOUND) {
                     strError = "Failed to find Masternode UTXO, missing masternode=" + strOutpoint + "\n";
                 } else if (err == CMasternode::COLLATERAL_INVALID_AMOUNT) {
-                    strError = "Masternode UTXO should have 5000 DIN, missing masternode=" + strOutpoint + "\n";
+                    strError = "Masternode UTXO should have 5000 FCK, missing masternode=" + strOutpoint + "\n";
                 }
 
                 return false;
@@ -688,7 +688,7 @@ void CGovernanceObject::UpdateSentinelVariables()
     // SET SENTINEL FLAGS TO TRUE IF MIMIMUM SUPPORT LEVELS ARE REACHED
     // ARE ANY OF THESE FLAGS CURRENTLY ACTIVATED?
 
-    if(GetAbsoluteYesCount(VOTE_SIGNAL_FUNDING) >= nAbsVoteReq) fCachedFunding = true;
+    if(GetAbsoluteYesCount(VOTE_SIGNAL_FUNFCKG) >= nAbsVoteReq) fCachedFunding = true;
     if((GetAbsoluteYesCount(VOTE_SIGNAL_DELETE) >= nAbsDeleteReq) && !fCachedDelete) {
         fCachedDelete = true;
         if(nDeletionTime == 0) {

@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -94,7 +94,7 @@ public:
         consensus.BIP34Hash = uint256S("0x000009110a70cd2bf2cdcae9a8b1425bb074c7b7b08570c2c9f04fe8668c6589");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000"); //FXX
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 1.5 * 60; // Dinero: 1.5 minutes
+        consensus.nPowTargetSpacing = 1.5 * 60; // Fucking: 1.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 100;
@@ -128,10 +128,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x48;
-        pchMessageStart[1] = 0xb3;
-        pchMessageStart[2] = 0xf2;
-        pchMessageStart[3] = 0x21;
+        pchMessageStart[0] = 0x49;
+        pchMessageStart[1] = 0xb4;
+        pchMessageStart[2] = 0xf3;
+        pchMessageStart[3] = 0x22;
         vAlertPubKey = ParseHex("0428afa3a0023803d312ef8082b1687bb79e54ca05b77b0c14d10158e760d2b8a186b590bc2041fe135d18e5f89274580d9e18d5275f9dc00a5f3c2181eec14b70");
         nDefaultPort = 26285;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
@@ -139,7 +139,7 @@ public:
         nPruneAfterHeight = 100000;
 
         /**
-        *Dinero MainNet
+        *Fucking MainNet
         *algorithm: neoscrypt
         *Genesis nTime = 1516830940
         *Genesis nNonce = 531473
@@ -154,27 +154,20 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000009110a70cd2bf2cdcae9a8b1425bb074c7b7b08570c2c9f04fe8668c6589"));
         assert(genesis.hashMerkleRoot == uint256S("0x07aed85c2fb7ad6855aca4a9822fe50c112811be3bfc79114beb0145a80b90f1"));
 
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed1.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed2.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed3.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed4.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed5.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed6.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed7.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "seed8.dinerocoin.org"));
+        vSeeds.push_back(CDNSSeedData("205.185.117.206", "205.185.117.206"));
 
-        // Dinero addresses start with 'R'
+        // Fucking addresses start with 'R'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,30);
-        // Dinero script addresses start with '7'
+        // Fucking script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
-        // Dinero private keys start with '7' or 'X'
+        // Fucking private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // Dinero BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Fucking BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Dinero BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Fucking BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // Dinero BIP44 coin type is '5'
+        // Fucking BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -247,8 +240,8 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x000008a8a0d4d1490b99bc94122b023c72e8adf4adac2f00bc4d5344eb4548d7");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dinero: 1 day
-        consensus.nPowTargetSpacing = 1.5 * 60; // Dinero: 90 seconds
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Fucking: 1 day
+        consensus.nPowTargetSpacing = 1.5 * 60; // Fucking: 90 seconds
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -303,21 +296,21 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "testnet1.dinerocoin.org"));
-        vSeeds.push_back(CDNSSeedData("dinerocoin.org", "testnet2.dinerocoin.org"));
+        vSeeds.push_back(CDNSSeedData("fuckingcoin.org", "testnet1.fuckingcoin.org"));
+        vSeeds.push_back(CDNSSeedData("fuckingcoin.org", "testnet2.fuckingcoin.org"));
 
-        // Testnet Dinero addresses start with 'y'
+        // Testnet Fucking addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Dinero script addresses start with '8' or '9'
+        // Testnet Fucking script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Dinero BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Fucking BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Dinero BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Fucking BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Dinero BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Fucking BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -375,8 +368,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dinero: 1 day
-        consensus.nPowTargetSpacing = 1.5 * 60; // Dinero: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Fucking: 1 day
+        consensus.nPowTargetSpacing = 1.5 * 60; // Fucking: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 15200; // same as mainnet
@@ -431,18 +424,18 @@ public:
             0,
             0
         };
-        // Regtest Dinero addresses start with 'y'
+        // Regtest Fucking addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Dinero script addresses start with '8' or '9'
+        // Regtest Fucking script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Dinero BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Fucking BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Dinero BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Fucking BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest Dinero BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Fucking BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
    }
 };

@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Dinero tests.
+Utilities to generate test vectors for the data-driven Fucking tests.
 
 Usage: 
 

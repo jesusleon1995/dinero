@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. dinero_test
+	$(MAKE) -C .. fucking_test
 clean:
-	$(MAKE) -C .. dinero_test_clean
+	$(MAKE) -C .. fucking_test_clean
 check:
-	$(MAKE) -C .. dinero_test_check
+	$(MAKE) -C .. fucking_test_check

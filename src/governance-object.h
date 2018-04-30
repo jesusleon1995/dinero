@@ -1,12 +1,12 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef GOVERNANCE_OBJECT_H
 #define GOVERNANCE_OBJECT_H
 
-//#define ENABLE_DINERO_DEBUG
+//#define ENABLE_FCKERO_DEBUG
 
 #include "cachemultimap.h"
 #include "governance-exceptions.h"
@@ -308,7 +308,7 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
     {
-        // SERIALIZE DATA FOR SAVING/LOADING OR NETWORK FUNCTIONS
+        // SERIALIZE DATA FOR SAVING/LOAFCKG OR NETWORK FUNCTIONS
 
         READWRITE(nHashParent);
         READWRITE(nRevision);

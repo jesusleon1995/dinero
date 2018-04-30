@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between dinero-cli and dinerod)
- * of a given instance of the Dinero system.
+ * CBaseChainParams defines the base parameters (shared between fucking-cli and fuckingd)
+ * of a given instance of the Fucking system.
  */
 class CBaseChainParams
 {

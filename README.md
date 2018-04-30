@@ -1,36 +1,36 @@
-Dinero Core staging tree 1.0.1.0
+Fucking Core staging tree 1.0.1.0
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/dinerocoin/dinero.svg?branch=master)](https://travis-ci.org/dinerocoin/dinero) `develop:` [![Build Status](https://travis-ci.org/dinerocoin/dinero.svg?branch=develop)](https://travis-ci.org/dinerocoin/dinero/branches)
+`master:` [![Build Status](https://travis-ci.org/fuckingcoin/fucking.svg?branch=master)](https://travis-ci.org/fuckingcoin/fucking) `develop:` [![Build Status](https://travis-ci.org/fuckingcoin/fucking.svg?branch=develop)](https://travis-ci.org/fuckingcoin/fucking/branches)
 
-https://www.dinerocoin.org
+https://www.fuckingcoin.org
 
 
-What is Dinero?
+What is Fucking?
 ----------------
 
-Dinero is a new digital currency, based on Bitcoin and Dash, that enables anonymous, instant
-payments to anyone, anywhere in the world. Dinero uses peer-to-peer technology
+Fucking is a new digital currency, based on Bitcoin and Dash, that enables anonymous, instant
+payments to anyone, anywhere in the world. Fucking uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Dinero Core is the name of the open
+are carried out collectively by the network. Fucking Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Dinero Core software, see https://www.dinerocoin.org/get-dinero/.
+the Fucking Core software, see https://www.fuckingcoin.org/get-fucking/.
 
 
 License
 -------
 
-Dinero Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Fucking Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/dinerocoin/dinero/tags) are created to indicate new official,
-stable release versions of Dinero Core.
+[Tags](https://github.com/fuckingcoin/fucking/tags) are created to indicate new official,
+stable release versions of Fucking Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -66,7 +66,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Dinero Core's Transifex page](https://www.transifex.com/projects/p/dinero/).
+[Fucking Core's Transifex page](https://www.transifex.com/projects/p/fucking/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
@@ -74,4 +74,4 @@ Translations are periodically pulled from Transifex and merged into the git repo
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
-Translators should also follow the [forum](https://www.dinerocoin.org/forum/topic/dinero-worldwide-collaboration.88/).
+Translators should also follow the [forum](https://www.fuckingcoin.org/forum/topic/fucking-worldwide-collaboration.88/).

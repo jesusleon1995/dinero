@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
@@ -46,7 +46,7 @@
  * =========================
  *
  *   // network
- *   CDineroNetwork lvl, network-type, network-status, network-error, milestone-status*
+ *   CFuckingNetwork lvl, network-type, network-status, network-error, milestone-status*
  *   CCategory lvl, category-type, status, status-error
  *   CNetworkGlobalVariable lvl, global-type, status, status-error
  *   // base: actor
@@ -80,7 +80,7 @@
  *  TREE STRUCTURE
  *  ===========================================
  * 
- *  DINERO NETWORK (ROOT)
+ *  FCKERO NETWORK (ROOT)
  *      -> NETWORK GLOBOLS
  *          -> SWITCHES, SETTINGS
  *      -> CATEGORIES
@@ -100,7 +100,7 @@
  *                      -> PROJECT1
  *              -> PROJECT1
  *                   -> CONTRACT2 (EXTERNAL CONTRACT)
- *                   -> PROPOSAL (GENERIC FUNDING)
+ *                   -> PROPOSAL (GENERIC FUNFCKG)
  *                       -> VO (OUTPUT VALUE == 3.23) // NETWORK OVERRIDE
  *                   -> REPORT1
  *                   -> REPORT2
@@ -118,7 +118,7 @@ private:
     int nLevel;
     std::string strCategory;
 
-    // Current OBJECT STATUS (see http://govman.dinerocoin.org/index.php/Documentation_:_Status_Field)
+    // Current OBJECT STATUS (see http://govman.fuckingcoin.org/index.php/Documentation_:_Status_Field)
     int nStatusID;
     std::string strStatusMessage;
 
@@ -131,7 +131,7 @@ public:
 };
 
 // // root node
-class CDineroNetwork : public CGovernanceObject
+class CFuckingNetwork : public CGovernanceObject
 {
 private:
     std::string strName;
@@ -139,7 +139,7 @@ private:
 
 
 public:
-    CDineroNetwork(UniValue objIn)
+    CFuckingNetwork(UniValue objIn)
     {
         strName = objIn["name"].get_str();
         strURL = objIn["name"].get_str();
@@ -175,9 +175,9 @@ public:
 
 };
 
-// // can be under: DineroNetwork
+// // can be under: FuckingNetwork
 // //   -- signature requirements : Key1(User)
-// class CDineroNetworkVariable : public CGovernanceObject
+// class CFuckingNetworkVariable : public CGovernanceObject
 // {
 // private:
 
@@ -280,7 +280,7 @@ public:
 //     // isRootCategory()
 //     // {
 //     //     // root categories won't have categories as parents
-//     //     return (IsType() == DineroNetwork);
+//     //     return (IsType() == FuckingNetwork);
 //     // }
 
 //     // isSubcategoryOf(std::string strParentName)

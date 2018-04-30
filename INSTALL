@@ -1,7 +1,7 @@
-Building Dinero Core
+Building Fucking Core
 
 After you install the usual build tools and C++ development tools,
-Dinero Core also needs some build dependencies which are not always provided
+Fucking Core also needs some build dependencies which are not always provided
 by default by the OS package manager
 (in particular BerkeleyDB 4.8 for building with wallet support).
 
@@ -21,10 +21,10 @@ use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/dinerocoin/dinero-binaries
+https://github.com/fuckingcoin/fucking-binaries
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building dinerod,
+See doc/build-*.md for instructions on building fuckingd,
 the intended-for-services, no-graphical-interface,
-reference implementation of Dinero.
+reference implementation of Fucking.

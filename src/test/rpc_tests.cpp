@@ -8,7 +8,7 @@
 #include "base58.h"
 #include "netbase.h"
 
-#include "test/test_dinero.h"
+#include "test/test_fucking.h"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/test/unit_test.hpp>

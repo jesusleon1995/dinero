@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both dinerod and dinero-qt, to make it harder for attackers to
+ * for both fuckingd and fucking-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Dinero Core");
+const std::string CLIENT_NAME("Fucking Core");
 
 /**
  * Client version number

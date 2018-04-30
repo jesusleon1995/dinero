@@ -5,7 +5,7 @@
 #include "support/pagelocker.h"
 
 #if defined(HAVE_CONFIG_H)
-#include "config/dinero-config.h"
+#include "config/fucking-config.h"
 #endif
 
 #ifdef WIN32

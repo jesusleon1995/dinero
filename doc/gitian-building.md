@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of Dinero Core using a Debian VM or physical system.*
+*Setup instructions for a Gitian build of Fucking Core using a Debian VM or physical system.*
 
-Gitian is the deterministic build process that is used to build the Dinero
+Gitian is the deterministic build process that is used to build the Fucking
 Core executables. It provides a way to be reasonably sure that the
 executables are really built from the source on GitHub. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to dinerocoin.org.
+to fuckingcoin.org.
 
 More independent Gitian builders are needed, which is why this guide exists.
 It is preferred you follow these steps yourself instead of using someone else's
@@ -26,7 +26,7 @@ Table of Contents
 - [Installing Gitian](#installing-gitian)
 - [Setting up the Gitian image](#setting-up-the-gitian-image)
 - [Getting and building the inputs](#getting-and-building-the-inputs)
-- [Building Dinero Core](#building-dinero-core)
+- [Building Fucking Core](#building-fucking-core)
 - [Building an alternative repository](#building-an-alternative-repository)
 - [Signing externally](#signing-externally)
 - [Uploading signatures](#uploading-signatures)
@@ -300,11 +300,11 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for Dinero Core and Gitian.
+Clone the git repositories for Fucking Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/dinerocoin/dinero
+git clone https://github.com/fuckingcoin/fucking
 ```
 
 Setting up the Gitian image
@@ -339,16 +339,16 @@ Getting and building the inputs
 --------------------------------
 
 Follow the instructions in [doc/release-process.md](release-process.md#fetch-and-build-inputs-first-time-or-when-dependency-versions-change)
-in the Dinero Core repository under 'Fetch and build inputs' to install sources which require
+in the Fucking Core repository under 'Fetch and build inputs' to install sources which require
 manual intervention. Also optionally follow the next step: 'Seed the Gitian sources cache
 and offline git repositories' which will fetch the remaining files required for building
 offline.
 
-Building Dinero Core
+Building Fucking Core
 ----------------
 
-To build Dinero Core (for Linux, OS X and Windows) just follow the steps under 'perform
-Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the Dinero Core repository.
+To build Fucking Core (for Linux, OS X and Windows) just follow the steps under 'perform
+Gitian builds' in [doc/release-process.md](release-process.md#perform-gitian-builds) in the Fucking Core repository.
 
 This may take some time as it will build all the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -363,12 +363,12 @@ tail -f var/build.log
 Output from `gbuild` will look something like
 
 ```bash
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/dinero/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/fucking/.git/
     remote: Counting objects: 57959, done.
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/dinerocoin/dinero
+    From https://github.com/fuckingcoin/fucking
     ... (new tags, new branch etc)
     --- Building for precise amd64 ---
     Stopping target if it is up
@@ -394,18 +394,18 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/dinero.git
+URL=https://github.com/crowning-/fucking.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit dinero=${COMMIT} --url dinero=${URL} ../dinero/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit dinero=${COMMIT} --url dinero=${URL} ../dinero/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit dinero=${COMMIT} --url dinero=${URL} ../dinero/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit fucking=${COMMIT} --url fucking=${URL} ../fucking/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit fucking=${COMMIT} --url fucking=${URL} ../fucking/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit fucking=${COMMIT} --url fucking=${URL} ../fucking/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Building fully offline
 -----------------------
 
 For building fully offline including attaching signatures to unsigned builds, the detached-sigs repository
-and the dinero git repository with the desired tag must both be available locally, and then gbuild must be
+and the fucking git repository with the desired tag must both be available locally, and then gbuild must be
 told where to find them. It also requires an apt-cacher-ng which is fully-populated but set to offline mode, or
 manually disabling gitian-builder's use of apt-get to update the VM build environment.
 
@@ -424,7 +424,7 @@ cd /path/to/gitian-builder
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get update
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root \
   -e DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
-  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../dinero/contrib/gitian-descriptors/*|sort|uniq )
+  $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../fucking/contrib/gitian-descriptors/*|sort|uniq )
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root apt-get -q -y purge grub
 LXC_ARCH=amd64 LXC_SUITE=precise on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 ```
@@ -444,12 +444,12 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/dinerocoin/dinero-detached-sigs.git
+git clone https://github.com/fuckingcoin/fucking-detached-sigs.git
 
-BTCPATH=/some/root/path/dinero.git
-SIGPATH=/some/root/path/dinero-detached-sigs.git
+BTCPATH=/some/root/path/fucking.git
+SIGPATH=/some/root/path/fucking-detached-sigs.git
 
-./bin/gbuild --url dinero=${BTCPATH},signature=${SIGPATH} ../dinero/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url fucking=${BTCPATH},signature=${SIGPATH} ../fucking/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally
@@ -464,9 +464,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/dinero-linux-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/dinero-win-build.assert
-    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/dinero-osx-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/fucking-linux-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/fucking-win-build.assert
+    gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/fucking-osx-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -476,6 +476,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[dinerocoin/gitian.sigs](https://github.com/dinerocoin/gitian.sigs/) repository, or if that's not possible to create a pull
+[fuckingcoin/gitian.sigs](https://github.com/fuckingcoin/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.

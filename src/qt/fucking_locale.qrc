@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/fucking_bg.qm</file>
+        <file alias="de">locale/fucking_de.qm</file>
+        <file alias="en">locale/fucking_en.qm</file>
+        <file alias="es">locale/fucking_es.qm</file>
+        <file alias="fi">locale/fucking_fi.qm</file>
+        <file alias="fr">locale/fucking_fr.qm</file>
+        <file alias="it">locale/fucking_it.qm</file>
+        <file alias="ja">locale/fucking_ja.qm</file>
+        <file alias="pl">locale/fucking_pl.qm</file>
+        <file alias="pt">locale/fucking_pt.qm</file>
+        <file alias="ru">locale/fucking_ru.qm</file>
+        <file alias="sk">locale/fucking_sk.qm</file>
+        <file alias="sv">locale/fucking_sv.qm</file>
+        <file alias="vi">locale/fucking_vi.qm</file>
+        <file alias="zh_CN">locale/fucking_zh_CN.qm</file>
+        <file alias="zh_TW">locale/fucking_zh_TW.qm</file>
+    </qresource>
+</RCC>

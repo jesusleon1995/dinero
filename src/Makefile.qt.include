@@ -1,24 +1,24 @@
-bin_PROGRAMS += qt/dinero-qt
+bin_PROGRAMS += qt/fucking-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# dinero qt core #
+# fucking qt core #
 QT_TS = \
-  qt/locale/dinero_bg.ts \
-  qt/locale/dinero_de.ts \
-  qt/locale/dinero_en.ts \
-  qt/locale/dinero_es.ts \
-  qt/locale/dinero_fi.ts \
-  qt/locale/dinero_fr.ts \
-  qt/locale/dinero_it.ts \
-  qt/locale/dinero_ja.ts \
-  qt/locale/dinero_pl.ts \
-  qt/locale/dinero_pt.ts \
-  qt/locale/dinero_ru.ts \
-  qt/locale/dinero_sk.ts \
-  qt/locale/dinero_sv.ts \
-  qt/locale/dinero_vi.ts \
-  qt/locale/dinero_zh_CN.ts \
-  qt/locale/dinero_zh_TW.ts
+  qt/locale/fucking_bg.ts \
+  qt/locale/fucking_de.ts \
+  qt/locale/fucking_en.ts \
+  qt/locale/fucking_es.ts \
+  qt/locale/fucking_fi.ts \
+  qt/locale/fucking_fr.ts \
+  qt/locale/fucking_it.ts \
+  qt/locale/fucking_ja.ts \
+  qt/locale/fucking_pl.ts \
+  qt/locale/fucking_pt.ts \
+  qt/locale/fucking_ru.ts \
+  qt/locale/fucking_sk.ts \
+  qt/locale/fucking_sv.ts \
+  qt/locale/fucking_vi.ts \
+  qt/locale/fucking_zh_CN.ts \
+  qt/locale/fucking_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -95,16 +95,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/dinero.moc \
+  qt/fucking.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_dinero.cpp
-QT_QRC = qt/dinero.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_dinero_locale.cpp
-QT_QRC_LOCALE = qt/dinero_locale.qrc
+QT_QRC_CPP = qt/qrc_fucking.cpp
+QT_QRC = qt/fucking.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_fucking_locale.cpp
+QT_QRC_LOCALE = qt/fucking_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -292,7 +292,7 @@ RES_IMAGES = \
   qt/res/images/default/about.png \
   qt/res/images/default/splash.png \
   qt/res/images/default/splash_testnet.png \
-  qt/res/images/default/dinero_logo_horizontal.png \
+  qt/res/images/default/fucking_logo_horizontal.png \
   qt/res/images/default/unchecked.png \
   qt/res/images/default/checked.png \
   qt/res/images/default/default_downArrow.png \
@@ -308,7 +308,7 @@ RES_CSS = \
   
 RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/dinero-qt-res.rc
+BITCOIN_RC = qt/res/fucking-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
@@ -329,70 +329,70 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_dinero_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_fucking_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# dinero-qt binary #
-qt_dinero_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# fucking-qt binary #
+qt_fucking_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_dinero_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_fucking_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_dinero_qt_SOURCES = qt/dinero.cpp
+qt_fucking_qt_SOURCES = qt/fucking.cpp
 if TARGET_DARWIN
-  qt_dinero_qt_SOURCES += $(BITCOIN_MM)
+  qt_fucking_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_dinero_qt_SOURCES += $(BITCOIN_RC)
+  qt_fucking_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_dinero_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_fucking_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_dinero_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_fucking_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_dinero_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_fucking_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_dinero_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_fucking_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_dinero_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_dinero_qt_LIBTOOLFLAGS = --tag CXX
+qt_fucking_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_fucking_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-qt/dinerostrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_consensus_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+qt/fuckingstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_consensus_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/dinerostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) qt/dinero.cpp $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/fuckingstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) qt/fucking.cpp $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/dinero_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/fucking_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name dinero_locale $(@D)/$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name fucking_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name dinero $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name fucking $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
 
 CLEANFILES += $(CLEAN_QT)
 
-dinero_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_dinero_qt_OBJECTS) qt/dinero-qt$(EXEEXT) $(LIBBITCOINQT)
+fucking_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_fucking_qt_OBJECTS) qt/fucking-qt$(EXEEXT) $(LIBBITCOINQT)
 
-dinero_qt : qt/dinero-qt$(EXEEXT)
+fucking_qt : qt/fucking-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

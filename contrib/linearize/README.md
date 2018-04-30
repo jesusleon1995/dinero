@@ -1,9 +1,9 @@
 # Linearize
 Construct a linear, no-fork, best version of the blockchain.
 
-## Step 0: Install dinero_hash
+## Step 0: Install fucking_hash
 
-https://github.com/dinerocoin/dinero_hash
+https://github.com/fuckingcoin/fucking_hash
 
 ## Step 1: Download hash list
 

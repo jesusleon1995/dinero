@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2017-2018 The Dinero Core developers
+// Copyright (c) 2017-2018 The Fucking Core developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef DINERO_HDCHAIN_H
-#define DINERO_HDCHAIN_H
+#ifndef FCKERO_HDCHAIN_H
+#define FCKERO_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -150,4 +150,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // DINERO_HDCHAIN_H
+#endif // FCKERO_HDCHAIN_H

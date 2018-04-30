@@ -1,4 +1,4 @@
-Source: dinero
+Source: fucking
 Section: utils
 Priority: optional
 Maintainer: Holger Schinzel
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://www.dinerocoin.org/
-Vcs-Git: git://github.com/dinerocoin/dinero.git
-Vcs-Browser: https://github.com/dinerocoin/dinero
+Homepage: https://www.fuckingcoin.org/
+Vcs-Git: git://github.com/fuckingcoin/fucking.git
+Vcs-Browser: https://github.com/fuckingcoin/fucking
 
-Package: dinerod
+Package: fuckingd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Dinero is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dinero uses peer-to-peer
+ Fucking is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Fucking uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dinero Core
+ and issuing money are carried out collectively by the network. Fucking Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, dinerod, and the CLI tool
- dinero-cli to interact with the daemon.
+ This package provides the daemon, fuckingd, and the CLI tool
+ fucking-cli to interact with the daemon.
 
-Package: dinero-qt
+Package: fucking-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Dinero is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dinero uses peer-to-peer
+ Fucking is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Fucking uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dinero Core
+ and issuing money are carried out collectively by the network. Fucking Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Dinero-Qt, a GUI for Dinero based on Qt.
+ This package provides Fucking-Qt, a GUI for Fucking based on Qt.
 
-Package: dinero-tx
+Package: fucking-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Dinero is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dinero uses peer-to-peer
+ Fucking is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Fucking uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dinero Core
+ and issuing money are carried out collectively by the network. Fucking Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides dinero-tx, a command-line transaction creation
- tool which can be used without a dinero daemon.  Some means of
+ This package provides fucking-tx, a command-line transaction creation
+ tool which can be used without a fucking daemon.  Some means of
  exchanging minimal transaction data with peers is still required.
